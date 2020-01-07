@@ -1,6 +1,5 @@
 <template>
   <div>
-    <societyselect @altered="searchdb" class="q-ma-md" :perms="['editor','admin']" showme="showme()"></societyselect>
     <q-tabs v-model="selectedTab" color="primary" active-bg-color="secondary" class="bg-primary text-white" align="justify">
       <q-tab name="tab-1" icon="fas fa-calendar-alt">Bookings</q-tab>
       <q-tab name="tab-2" icon="fas fa-search-location">Venues</q-tab>
@@ -129,7 +128,6 @@
 </template>
 
 <script>
-import societyselect from './Societyselect'
 import { date, colors } from 'quasar'
 export default {
   data () {
@@ -162,9 +160,6 @@ export default {
       },
       months: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
     }
-  },
-  components: {
-    'societyselect': societyselect
   },
   computed: {
     title () {

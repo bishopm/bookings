@@ -4,7 +4,7 @@ const routes = [
     path: '/',
     component: () => import('layouts/default'),
     children: [
-      { name: 'venues', path: '/venues', component: () => import('components/Venues'), meta: { auth: true } }
+      { name: 'home', path: '/', component: () => import('components/Venues'), meta: { auth: true } }
     ]
   }
 ]
