@@ -276,7 +276,7 @@ export default {
     },
     searchdb () {
       this.$axios.defaults.headers.common['Authorization'] = 'Bearer ' + this.$store.state.token
-      this.$axios.get(process.env.API + '/venues/' + this.$store.state.select)
+      this.$axios.get(process.env.API + '/venues')
         .then(response => {
           this.venueOptions = []
           this.venues = []

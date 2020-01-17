@@ -58,6 +58,15 @@ module.exports = function (ctx) {
 
     // https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-build
     build: {
+      env: ctx.dev
+        ? { // so on dev we'll have
+          API: JSON.stringify('http://localhost/churchnet/public/api'),
+          WEB: JSON.stringify('http://localhost/churchnet/public')
+        }
+        : { // and on build (production):
+          API: JSON.stringify('https://church.net.za/api'),
+          WEB: JSON.stringify('https://church.net.za')
+        },
       scopeHoisting: true,
       // vueRouterMode: 'history',
       // showProgress: false,
